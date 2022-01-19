@@ -1,13 +1,13 @@
 // Package calc has add, subtract, multiply, divide between math calculations between two numbers.
-package calc
+package main
 
 import (
 	"errors"
 )
 
-// Add finds the sum of two numbers
+// Sum finds the sum of two numbers
 // Returns a sum and any error encountered.
-func Add(numbers ...float64) (float64, error) {
+func Sum(numbers ...float64) (float64, error) {
 	var sum float64 = 0
 	for _, number := range numbers {
 		sum += number
@@ -17,14 +17,22 @@ func Add(numbers ...float64) (float64, error) {
 
 // Subtract finds the difference of two numbers.
 // Returns a difference and any error encountered.
-func Subtract(minuend float64, subtrahend float64) (float64, error) {
-	return minuend - subtrahend, nil
+func Subtract(numbers ...float64) (float64, error) {
+	var difference float64 = 0
+	for _, number := range numbers {
+		difference -= number
+	}
+	return difference, nil
 }
 
 // Multiply finds the product of two numbers.
 // Returns the product and any error encountered.
-func Multiply(multiplier float64, multiplicand float64) (float64, error) {
-	return multiplier * multiplicand, nil
+func Multiply(numbers ...float64) (float64, error) {
+	var product float64 = 0
+	for _, number := range numbers {
+		product *= number
+	}
+	return product, nil
 }
 
 // Divide finds the division of two numbers.
